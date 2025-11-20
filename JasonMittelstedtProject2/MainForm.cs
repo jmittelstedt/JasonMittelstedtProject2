@@ -28,11 +28,19 @@ namespace JasonMittelstedtProject2
             else {
                 highScores.Load();
 
+
                 gameTimer.Interval = 1000;
                 gameTimer.Tick += GameTimer_Tick;
 
                 StartNewRound();
             }
+        }
+
+        private void testfind()
+        {
+            Console.WriteLine(dictionary.isFound("net") == true);
+            Console.WriteLine(dictionary.isFound("racing") == true);
+            Console.WriteLine(dictionary.isFound("abdfdsdfe") == false);
         }
 
         private void StartNewRound()
