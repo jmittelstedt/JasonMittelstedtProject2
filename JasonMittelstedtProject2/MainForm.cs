@@ -1,31 +1,38 @@
 using JasonMittelstedtProject2.Model;
+using System.Collections.Generic;
 using Timer = System.Windows.Forms.Timer;
 
 namespace JasonMittelstedtProject2
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         private Round currentRound = new();
-        private DictionaryLoader dict = new();
+        private LoadJsonDictionary dict = new();
         private HighScoreManager highScores = new();
         private char[] letters = new char[7];
         private HashSet<string> alreadyValid = new();
         private int remainingSeconds = 60;
         private Timer gameTimer = new();
-        public Form1()
+        private Dictionary dictionary = new();
+        public MainForm()
         {
             InitializeComponent();
             this.Text = "Text Twist by Mittelstedt";
 
-            if (!dict.Load("dictionary.json"))
+            dictionary = dict.Load("dictionary.json");
+
+            if (dictionary.isEmpty())
+            {
                 MessageBox.Show("dictionary.json missing or invalid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else {
+                highScores.Load();
 
-            highScores.Load();
+                gameTimer.Interval = 1000;
+                gameTimer.Tick += GameTimer_Tick;
 
-            gameTimer.Interval = 1000;
-            gameTimer.Tick += GameTimer_Tick;
-
-            StartNewRound();
+                StartNewRound();
+            }
         }
 
         private void StartNewRound()
