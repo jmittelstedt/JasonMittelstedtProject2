@@ -36,12 +36,7 @@ namespace JasonMittelstedtProject2
             }
         }
 
-        private void testfind()
-        {
-            Console.WriteLine(dictionary.isFound("net") == true);
-            Console.WriteLine(dictionary.isFound("racing") == true);
-            Console.WriteLine(dictionary.isFound("abdfdsdfe") == false);
-        }
+        
 
         private void StartNewRound()
         {
@@ -105,7 +100,7 @@ namespace JasonMittelstedtProject2
                 letterCounts[ch]--;
             }
 
-            if (!dict.Contains(word)) return (false, "Not in dictionary");
+            if (!dictionary.isFound(word)) return (false, "Not in dictionary");
             if (alreadyValid.Contains(word)) return (false, "Already entered");
 
             return (true, "Valid");

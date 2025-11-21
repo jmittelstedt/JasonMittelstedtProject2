@@ -8,7 +8,7 @@ namespace JasonMittelstedtProject2.Model
 {
     public class DictionaryLetter
     {
-        public string letter { get; set; }
+        public char letter { get; set; }
 
         public string[] words { get; set; }
     }
