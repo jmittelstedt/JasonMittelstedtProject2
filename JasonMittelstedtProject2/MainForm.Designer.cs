@@ -38,7 +38,9 @@
             btnSubmit = new Button();
             txtCurrentWord = new TextBox();
             lstValidWords = new ListView();
+            columnHeader2 = new ColumnHeader();
             lstInvalidWords = new ListView();
+            columnHeader1 = new ColumnHeader();
             lblTimer = new Label();
             lblRoundScore = new Label();
             lblSessionScore = new Label();
@@ -57,12 +59,13 @@
             exportToolStripMenuItem = new ToolStripMenuItem();
             btnClear = new Button();
             btnTwist = new Button();
+            label1 = new Label();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // btnLetter0
             // 
-            btnLetter0.Location = new Point(12, 148);
+            btnLetter0.Location = new Point(80, 148);
             btnLetter0.Name = "btnLetter0";
             btnLetter0.Size = new Size(94, 29);
             btnLetter0.TabIndex = 0;
@@ -71,7 +74,7 @@
             // 
             // btnLetter1
             // 
-            btnLetter1.Location = new Point(112, 148);
+            btnLetter1.Location = new Point(215, 148);
             btnLetter1.Name = "btnLetter1";
             btnLetter1.Size = new Size(94, 29);
             btnLetter1.TabIndex = 1;
@@ -80,7 +83,7 @@
             // 
             // btnLetter2
             // 
-            btnLetter2.Location = new Point(212, 148);
+            btnLetter2.Location = new Point(340, 148);
             btnLetter2.Name = "btnLetter2";
             btnLetter2.Size = new Size(94, 29);
             btnLetter2.TabIndex = 2;
@@ -89,7 +92,7 @@
             // 
             // btnLetter3
             // 
-            btnLetter3.Location = new Point(312, 148);
+            btnLetter3.Location = new Point(467, 148);
             btnLetter3.Name = "btnLetter3";
             btnLetter3.Size = new Size(94, 29);
             btnLetter3.TabIndex = 3;
@@ -98,7 +101,7 @@
             // 
             // btnLetter4
             // 
-            btnLetter4.Location = new Point(412, 148);
+            btnLetter4.Location = new Point(587, 148);
             btnLetter4.Name = "btnLetter4";
             btnLetter4.Size = new Size(94, 29);
             btnLetter4.TabIndex = 4;
@@ -107,7 +110,7 @@
             // 
             // btnLetter5
             // 
-            btnLetter5.Location = new Point(512, 148);
+            btnLetter5.Location = new Point(718, 148);
             btnLetter5.Name = "btnLetter5";
             btnLetter5.Size = new Size(94, 29);
             btnLetter5.TabIndex = 5;
@@ -116,7 +119,7 @@
             // 
             // btnLetter6
             // 
-            btnLetter6.Location = new Point(612, 148);
+            btnLetter6.Location = new Point(840, 148);
             btnLetter6.Name = "btnLetter6";
             btnLetter6.Size = new Size(94, 29);
             btnLetter6.TabIndex = 6;
@@ -135,27 +138,37 @@
             // 
             // txtCurrentWord
             // 
-            txtCurrentWord.Location = new Point(201, 294);
+            txtCurrentWord.Location = new Point(34, 225);
             txtCurrentWord.Multiline = true;
             txtCurrentWord.Name = "txtCurrentWord";
-            txtCurrentWord.Size = new Size(125, 97);
+            txtCurrentWord.Size = new Size(125, 36);
             txtCurrentWord.TabIndex = 8;
             // 
             // lstValidWords
             // 
-            lstValidWords.Location = new Point(397, 263);
+            lstValidWords.Columns.AddRange(new ColumnHeader[] { columnHeader2 });
+            lstValidWords.Location = new Point(180, 263);
             lstValidWords.Name = "lstValidWords";
-            lstValidWords.Size = new Size(151, 121);
+            lstValidWords.Size = new Size(368, 255);
             lstValidWords.TabIndex = 9;
             lstValidWords.UseCompatibleStateImageBehavior = false;
             // 
+            // columnHeader2
+            // 
+            columnHeader2.Width = -1;
+            // 
             // lstInvalidWords
             // 
+            lstInvalidWords.Columns.AddRange(new ColumnHeader[] { columnHeader1 });
             lstInvalidWords.Location = new Point(575, 263);
             lstInvalidWords.Name = "lstInvalidWords";
-            lstInvalidWords.Size = new Size(151, 121);
+            lstInvalidWords.Size = new Size(422, 255);
             lstInvalidWords.TabIndex = 10;
             lstInvalidWords.UseCompatibleStateImageBehavior = false;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Width = -1;
             // 
             // lblTimer
             // 
@@ -190,7 +203,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1 });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 28);
+            menuStrip1.Size = new Size(1031, 28);
             menuStrip1.TabIndex = 14;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -290,11 +303,21 @@
             btnTwist.UseVisualStyleBackColor = true;
             btnTwist.Click += btnTwist_Click;
             // 
-            // Form1
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(40, 193);
+            label1.Name = "label1";
+            label1.Size = new Size(114, 20);
+            label1.TabIndex = 17;
+            label1.Text = "Enter word here";
+            // 
+            // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1031, 530);
+            Controls.Add(label1);
             Controls.Add(btnTwist);
             Controls.Add(btnClear);
             Controls.Add(lblSessionScore);
@@ -313,7 +336,7 @@
             Controls.Add(btnLetter0);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
-            Name = "Form1";
+            Name = "MainForm";
             Text = "Text Twist by Mittelstedt";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
@@ -352,5 +375,8 @@
         private ToolStripMenuItem resetToolStripMenuItem;
         private Button btnClear;
         private Button btnTwist;
+        private Label label1;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
     }
 }

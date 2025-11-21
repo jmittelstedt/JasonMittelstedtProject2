@@ -7,16 +7,13 @@ using System.Threading.Tasks;
 
 namespace JasonMittelstedtProject2.Model
 {
-    public class LoadJsonDictionary
+    public class JsonDictionary
     {
         public HashSet<string> Words { get; private set; } = new();
 
         public Dictionary Load(string fileName)
         {
-            string executePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
-            string solutionPath = Directory.GetParent(executePath).Parent.Parent.Parent.FullName;
-          
-            string completeFileName = Path.Combine(solutionPath, "Data", fileName);
+            var completeFileName = Locator.getFileName(fileName);
             if (!File.Exists(completeFileName)) return new Dictionary();
             try
             {
@@ -25,7 +22,9 @@ namespace JasonMittelstedtProject2.Model
                 
                 return new Dictionary(list);
             }
-            catch { return new Dictionary(); }
+            catch { 
+                return new Dictionary(); 
+            }
         }
     }
 }

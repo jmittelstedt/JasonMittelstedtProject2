@@ -16,10 +16,11 @@ namespace JasonMittelstedtProject2.Model
 
         public void Load()
         {
-            if (!File.Exists(FileName)) { HighScores = new(); return; }
+            var completeFileName = Locator.getFileName(FileName);
+            if (!File.Exists(completeFileName)) { HighScores = new(); return; }
             try
             {
-                HighScores = JsonSerializer.Deserialize<List<HighScoreEntry>>(File.ReadAllText(FileName)) ?? new();
+                HighScores = JsonSerializer.Deserialize<List<HighScoreEntry>>(File.ReadAllText(completeFileName)) ?? new();
             }
             catch { HighScores = new(); }
         }
@@ -27,7 +28,8 @@ namespace JasonMittelstedtProject2.Model
         public void Save()
         {
             var json = JsonSerializer.Serialize(HighScores, new JsonSerializerOptions { WriteIndented = true });
-            File.WriteAllText(FileName, json);
+            var completeFileName = Locator.getFileName(FileName);
+            File.WriteAllText(completeFileName, json);
         }
 
         public void Add(HighScoreEntry entry)

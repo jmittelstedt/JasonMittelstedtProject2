@@ -1,0 +1,20 @@
+[
+  {
+    "PlayerName": "Player",
+    "Score": 630,
+    "DurationSeconds": 60,
+    "DateUtc": "2025-11-21T21:59:32.8245945Z"
+  },
+  {
+    "PlayerName": "Player",
+    "Score": 520,
+    "DurationSeconds": 60,
+    "DateUtc": "2025-11-21T21:11:23.5762614Z"
+  },
+  {
+    "PlayerName": "Player",
+    "Score": 270,
+    "DurationSeconds": 60,
+    "DateUtc": "2025-11-21T20:56:35.504148Z"
+  }
+]
