@@ -4,17 +4,54 @@ using Timer = System.Windows.Forms.Timer;
 
 namespace JasonMittelstedtProject2
 {
+    /// <summary>
+    /// The main Windows Form for the Text Twist game application.
+    /// Handles game state, round flow, timers, UI updates,
+    /// word validation, scoring, and high score management.
+    /// </summary>
     public partial class MainForm : Form
     {
+        /// <summary>
+        /// The current active game round.
+        /// </summary>
         private Round currentRound = new();
+        /// <summary>
+        /// JSON-backed dictionary loader for word lookup.
+        /// </summary>
         private JsonDictionary dict = new();
+        /// <summary>
+        /// Manages loading, saving, and adding player high scores.
+        /// </summary>
         private HighScoreManager highScores = new();
+        /// <summary>
+        /// The 7 letters generated for the player this round.
+        /// </summary>
         private char[] letters = new char[7];
+        /// <summary>
+        /// Tracks words the player has already submitted successfully.
+        /// Prevents awarding points for duplicates.
+        /// </summary>
         private HashSet<string> alreadyValid = new();
+        /// <summary>
+        /// Countdown timer for the current game round (in seconds).
+        /// </summary>
         private int remainingSeconds = 0;
+        /// <summary>
+        /// Windows Forms timer that fires every second to update the UI countdown.
+        /// </summary>
         private Timer gameTimer = new();
+        /// <summary>
+        /// The loaded dictionary containing all valid game words.
+        /// </summary>
         private Dictionary dictionary = new();
+        /// <summary>
+        /// Player's cumulative score across all completed rounds of this session.
+        /// </summary>
         private int sessionScore = 0;
+        /// <summary>
+        /// Initializes the main game window, loads the dictionary,
+        /// and starts a new round if dictionary is valid.
+        /// </summary>
         public MainForm()
         {
             InitializeComponent();
@@ -34,6 +71,10 @@ namespace JasonMittelstedtProject2
             }
         }
 
+        /// <summary>
+        /// Sets up a new game round by generating letters, resetting timers,
+        /// clearing the UI, and starting the countdown.
+        /// </summary>
         private void StartNewRound()
         {
             
@@ -57,6 +98,9 @@ namespace JasonMittelstedtProject2
             gameTimer.Start();
         }
 
+        /// <summary>
+        /// Updates the seven letter buttons on the UI to match the current round's letters.
+        /// </summary>
         private void UpdateLetterButtons()
         {
             Button[] buttons = { btnLetter0, btnLetter1, btnLetter2, btnLetter3, btnLetter4, btnLetter5, btnLetter6 };
@@ -67,6 +111,11 @@ namespace JasonMittelstedtProject2
             }
         }
 
+        /// <summary>
+        /// Handles the countdown timer tick event. Updates the timer label,
+        /// ends the round when time expires, saves high scores,
+        /// and prompts the player to continue or exit.
+        /// </summary>
         private void GameTimer_Tick(object sender, EventArgs e)
         {
             remainingSeconds--;
@@ -97,12 +146,19 @@ namespace JasonMittelstedtProject2
             }
         }
 
+        /// <summary>
+        /// Enables all letter buttons. Used after clearing or submitting a word.
+        /// </summary>
         private void EnableAllLetterButtons()
         {
             Button[] buttons = { btnLetter0, btnLetter1, btnLetter2, btnLetter3, btnLetter4, btnLetter5, btnLetter6 };
             foreach (var b in buttons) b.Enabled = true;
         }
 
+        /// <summary>
+        /// Handles the submit button: validates the word, scores it if valid,
+        /// adds it to the appropriate list, and resets the current word input.
+        /// </summary>
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             string word = txtCurrentWord.Text.Trim().ToLower();
@@ -128,18 +184,27 @@ namespace JasonMittelstedtProject2
             EnableAllLetterButtons();
         }
 
+        /// <summary>
+        /// Clears the current word input and re-enables all letter selection buttons.
+        /// </summary>
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtCurrentWord.Clear();
             EnableAllLetterButtons();
         }
 
+        /// <summary>
+        /// Randomly rearranges (twists) the current set of letters and updates the UI.
+        /// </summary>
         private void btnTwist_Click(object sender, EventArgs e)
         {
             LetterBag.Twist(ref letters);
             UpdateLetterButtons();
         }
 
+        /// <summary>
+        /// Prevents non-letter characters from being typed in the word input box.
+        /// </summary>
         private void txtCurrentWord_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))

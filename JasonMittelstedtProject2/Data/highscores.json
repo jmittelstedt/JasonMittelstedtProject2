@@ -1,200 +1,247 @@
 [
   {
     "PlayerName": "Player",
+    "Score": 1660,
+    "DurationSeconds": 120,
+    "DateUtc": "2025-11-22T17:44:14.0016114Z",
+    "MainForm": null
+  },
+  {
+    "PlayerName": "Player",
     "Score": 910,
     "DurationSeconds": 60,
-    "DateUtc": "2025-11-22T00:53:54.7124847Z"
+    "DateUtc": "2025-11-22T00:53:54.7124847Z",
+    "MainForm": null
   },
   {
     "PlayerName": "Player",
     "Score": 860,
     "DurationSeconds": 60,
-    "DateUtc": "2025-11-22T01:06:02.0018938Z"
+    "DateUtc": "2025-11-22T01:06:02.0018938Z",
+    "MainForm": null
+  },
+  {
+    "PlayerName": "Player",
+    "Score": 790,
+    "DurationSeconds": 120,
+    "DateUtc": "2025-11-22T17:42:07.4210488Z",
+    "MainForm": null
   },
   {
     "PlayerName": "Player",
     "Score": 700,
     "DurationSeconds": 60,
-    "DateUtc": "2025-11-22T01:13:33.4776945Z"
+    "DateUtc": "2025-11-22T01:13:33.4776945Z",
+    "MainForm": null
   },
   {
     "PlayerName": "Player",
     "Score": 630,
     "DurationSeconds": 60,
-    "DateUtc": "2025-11-21T21:59:32.8245945Z"
+    "DateUtc": "2025-11-21T21:59:32.8245945Z",
+    "MainForm": null
   },
   {
     "PlayerName": "Player",
     "Score": 610,
     "DurationSeconds": 120,
-    "DateUtc": "2025-11-22T01:34:17.9270767Z"
+    "DateUtc": "2025-11-22T01:34:17.9270767Z",
+    "MainForm": null
   },
   {
     "PlayerName": "Player",
     "Score": 590,
     "DurationSeconds": 60,
-    "DateUtc": "2025-11-22T01:07:06.2640341Z"
+    "DateUtc": "2025-11-22T01:07:06.2640341Z",
+    "MainForm": null
   },
   {
     "PlayerName": "Player",
     "Score": 590,
     "DurationSeconds": 120,
-    "DateUtc": "2025-11-22T01:32:10.5934281Z"
+    "DateUtc": "2025-11-22T01:32:10.5934281Z",
+    "MainForm": null
   },
   {
     "PlayerName": "Player",
     "Score": 520,
     "DurationSeconds": 60,
-    "DateUtc": "2025-11-21T21:11:23.5762614Z"
+    "DateUtc": "2025-11-21T21:11:23.5762614Z",
+    "MainForm": null
   },
   {
     "PlayerName": "Player",
     "Score": 520,
     "DurationSeconds": 60,
-    "DateUtc": "2025-11-22T00:32:45.1106275Z"
+    "DateUtc": "2025-11-22T00:32:45.1106275Z",
+    "MainForm": null
   },
   {
     "PlayerName": "Player",
     "Score": 430,
     "DurationSeconds": 60,
-    "DateUtc": "2025-11-22T00:57:01.2586616Z"
+    "DateUtc": "2025-11-22T00:57:01.2586616Z",
+    "MainForm": null
   },
   {
     "PlayerName": "Player",
     "Score": 340,
     "DurationSeconds": 60,
-    "DateUtc": "2025-11-22T01:11:53.6866394Z"
+    "DateUtc": "2025-11-22T01:11:53.6866394Z",
+    "MainForm": null
   },
   {
     "PlayerName": "Player",
     "Score": 320,
     "DurationSeconds": 60,
-    "DateUtc": "2025-11-22T00:57:26.4042053Z"
+    "DateUtc": "2025-11-22T00:57:26.4042053Z",
+    "MainForm": null
   },
   {
     "PlayerName": "Player",
     "Score": 270,
     "DurationSeconds": 60,
-    "DateUtc": "2025-11-21T20:56:35.504148Z"
+    "DateUtc": "2025-11-21T20:56:35.504148Z",
+    "MainForm": null
   },
   {
     "PlayerName": "Player",
     "Score": 180,
     "DurationSeconds": 120,
-    "DateUtc": "2025-11-22T01:30:08.802519Z"
+    "DateUtc": "2025-11-22T01:30:08.802519Z",
+    "MainForm": null
   },
   {
     "PlayerName": "Player",
     "Score": 0,
     "DurationSeconds": -13,
-    "DateUtc": "2025-11-22T00:54:22.9553423Z"
+    "DateUtc": "2025-11-22T00:54:22.9553423Z",
+    "MainForm": null
   },
   {
     "PlayerName": "Player",
     "Score": 0,
     "DurationSeconds": -12,
-    "DateUtc": "2025-11-22T00:54:22.9180739Z"
+    "DateUtc": "2025-11-22T00:54:22.9180739Z",
+    "MainForm": null
   },
   {
     "PlayerName": "Player",
     "Score": 0,
     "DurationSeconds": -11,
-    "DateUtc": "2025-11-22T00:54:22.8851157Z"
+    "DateUtc": "2025-11-22T00:54:22.8851157Z",
+    "MainForm": null
   },
   {
     "PlayerName": "Player",
     "Score": 0,
     "DurationSeconds": -10,
-    "DateUtc": "2025-11-22T00:54:22.8473812Z"
+    "DateUtc": "2025-11-22T00:54:22.8473812Z",
+    "MainForm": null
   },
   {
     "PlayerName": "Player",
     "Score": 0,
     "DurationSeconds": -9,
-    "DateUtc": "2025-11-22T00:54:22.8053697Z"
+    "DateUtc": "2025-11-22T00:54:22.8053697Z",
+    "MainForm": null
   },
   {
     "PlayerName": "Player",
     "Score": 0,
     "DurationSeconds": -8,
-    "DateUtc": "2025-11-22T00:54:22.7742847Z"
+    "DateUtc": "2025-11-22T00:54:22.7742847Z",
+    "MainForm": null
   },
   {
     "PlayerName": "Player",
     "Score": 0,
     "DurationSeconds": -6,
-    "DateUtc": "2025-11-22T00:54:14.0873427Z"
+    "DateUtc": "2025-11-22T00:54:14.0873427Z",
+    "MainForm": null
   },
   {
     "PlayerName": "Player",
     "Score": 0,
     "DurationSeconds": -6,
-    "DateUtc": "2025-11-22T00:54:22.7422445Z"
+    "DateUtc": "2025-11-22T00:54:22.7422445Z",
+    "MainForm": null
   },
   {
     "PlayerName": "Player",
     "Score": 0,
     "DurationSeconds": -5,
-    "DateUtc": "2025-11-22T00:54:12.6872554Z"
+    "DateUtc": "2025-11-22T00:54:12.6872554Z",
+    "MainForm": null
   },
   {
     "PlayerName": "Player",
     "Score": 0,
     "DurationSeconds": -4,
-    "DateUtc": "2025-11-22T00:54:11.9843092Z"
+    "DateUtc": "2025-11-22T00:54:11.9843092Z",
+    "MainForm": null
   },
   {
     "PlayerName": "Player",
     "Score": 0,
     "DurationSeconds": -3,
-    "DateUtc": "2025-11-22T00:54:11.3483747Z"
+    "DateUtc": "2025-11-22T00:54:11.3483747Z",
+    "MainForm": null
   },
   {
     "PlayerName": "Player",
     "Score": 0,
     "DurationSeconds": -2,
-    "DateUtc": "2025-11-22T00:54:08.3365101Z"
+    "DateUtc": "2025-11-22T00:54:08.3365101Z",
+    "MainForm": null
   },
   {
     "PlayerName": "Player",
     "Score": 0,
     "DurationSeconds": -1,
-    "DateUtc": "2025-11-22T00:54:06.0738559Z"
+    "DateUtc": "2025-11-22T00:54:06.0738559Z",
+    "MainForm": null
   },
   {
     "PlayerName": "Player",
     "Score": 0,
     "DurationSeconds": 0,
-    "DateUtc": "2025-11-22T00:54:03.2627995Z"
+    "DateUtc": "2025-11-22T00:54:03.2627995Z",
+    "MainForm": null
   },
   {
     "PlayerName": "Player",
     "Score": 0,
     "DurationSeconds": 60,
-    "DateUtc": "2025-11-22T00:30:33.7971773Z"
+    "DateUtc": "2025-11-22T00:30:33.7971773Z",
+    "MainForm": null
   },
   {
     "PlayerName": "Player",
     "Score": 0,
     "DurationSeconds": 60,
-    "DateUtc": "2025-11-22T00:30:45.8387424Z"
+    "DateUtc": "2025-11-22T00:30:45.8387424Z",
+    "MainForm": null
   },
   {
     "PlayerName": "Player",
     "Score": 0,
     "DurationSeconds": 60,
-    "DateUtc": "2025-11-22T00:56:26.8801268Z"
+    "DateUtc": "2025-11-22T00:56:26.8801268Z",
+    "MainForm": null
   },
   {
     "PlayerName": "Player",
     "Score": 0,
     "DurationSeconds": 60,
-    "DateUtc": "2025-11-22T00:57:44.484791Z"
+    "DateUtc": "2025-11-22T00:57:44.484791Z",
+    "MainForm": null
   },
   {
     "PlayerName": "Player",
     "Score": 0,
     "DurationSeconds": 60,
-    "DateUtc": "2025-11-22T01:01:03.3298634Z"
+    "DateUtc": "2025-11-22T01:01:03.3298634Z",
+    "MainForm": null
   }
 ]

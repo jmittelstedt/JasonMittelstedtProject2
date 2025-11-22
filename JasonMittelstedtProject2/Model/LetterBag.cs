@@ -6,11 +6,38 @@ using System.Threading.Tasks;
 
 namespace JasonMittelstedtProject2.Model
 {
+    /// <summary>
+    /// Represents a collection of letter tiles used for random draws,
+    /// similar to a Scrabble-style letter bag. Letters are added based
+    /// on frequency and can be drawn or shuffled.
+    /// </summary>
     public class LetterBag
     {
+        /// <summary>
+        /// Internal list holding all letters currently in the bag.
+        /// </summary>
         private readonly List<char> bag = new();
+        /// <summary>
+        /// Random number generator used for drawing letters.
+        /// </summary>
         private readonly Random random = new();
 
+        /// <summary>
+        /// Reference to the owning <see cref="MainForm"/> if needed.
+        /// </summary>
+        public MainForm MainForm
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        /// <summary>
+        /// Creates a default <see cref="LetterBag"/> pre-filled with letters
+        /// according to English letter frequency distribution.
+        /// </summary>
+        /// <returns>A new populated <see cref="LetterBag"/> instance.</returns>
         public static LetterBag CreateDefault()
         {
             var lb = new LetterBag();
@@ -27,6 +54,12 @@ namespace JasonMittelstedtProject2.Model
             return lb;
         }
 
+        /// <summary>
+        /// Randomly draws seven letters from the bag, ensuring that at least
+        /// one vowel (a, e, i, o, u, or y) is included in the result.
+        /// Letters are selected with replacement and are not removed from the bag.
+        /// </summary>
+        /// <returns>An array of seven randomly selected letters.</returns>
         public char[] DrawSeven()
         {
             var result = new List<char>();
@@ -43,6 +76,10 @@ namespace JasonMittelstedtProject2.Model
             return result.ToArray();
         }
 
+        /// <summary>
+        /// Randomly shuffles the given array of letters using the Fisher–Yates algorithm.
+        /// </summary>
+        /// <param name="letters">Reference to the letter array to shuffle.</param>
         public static void Twist(ref char[] letters)
         {
             var rng = new Random();
@@ -55,6 +92,11 @@ namespace JasonMittelstedtProject2.Model
             }
         }
 
+        /// <summary>
+        /// Adds the specified character to the internal bag a given number of times.
+        /// </summary>
+        /// <param name="s">String containing the character(s) to add.</param>
+        /// <param name="n">Number of times to add each character.</param>
         private void addToBag(string s, int n)
         {
             foreach (var c in s)
