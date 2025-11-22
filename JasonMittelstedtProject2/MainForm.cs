@@ -11,9 +11,10 @@ namespace JasonMittelstedtProject2
         private HighScoreManager highScores = new();
         private char[] letters = new char[7];
         private HashSet<string> alreadyValid = new();
-        private int remainingSeconds = 60;
+        private int remainingSeconds = 0;
         private Timer gameTimer = new();
         private Dictionary dictionary = new();
+        private int sessionScore = 0;
         public MainForm()
         {
             InitializeComponent();
@@ -25,17 +26,19 @@ namespace JasonMittelstedtProject2
             {
                 MessageBox.Show("dictionary.json missing or invalid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else {
-
+            else
+            {
                 gameTimer.Interval = 1000;
                 gameTimer.Tick += GameTimer_Tick;
-
                 StartNewRound();
             }
         }
 
         private void StartNewRound()
         {
+            
+            remainingSeconds = 120;
+
             LetterBag lb = LetterBag.CreateDefault();
             letters = lb.DrawSeven();
             currentRound = new Round { Letters = letters, DurationSeconds = remainingSeconds };
@@ -71,10 +74,26 @@ namespace JasonMittelstedtProject2
             if (remainingSeconds <= 0)
             {
                 gameTimer.Stop();
-                MessageBox.Show($"Time's up! Round score: {currentRound.TotalScore}", "Round Over");
+                sessionScore += currentRound.TotalScore;
+                roundScoreLabel.Text = currentRound.TotalScore.ToString();
+                sessionScoreLabel.Text = sessionScore.ToString();
+                
                 highScores.Load();
                 highScores.Add(new HighScoreEntry { PlayerName = "Player", Score = currentRound.TotalScore, DurationSeconds = currentRound.DurationSeconds });
                 highScores.Save();
+                var result = MessageBox.Show(
+                    $"Time's up! Round score: {currentRound.TotalScore} Do you want to play again?",
+                    "Text Twist",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
+                if (result == DialogResult.Yes)
+                {
+                    StartNewRound();
+                } else
+                {
+                    Application.Exit();
+                }
             }
         }
 
@@ -119,6 +138,14 @@ namespace JasonMittelstedtProject2
         {
             LetterBag.Twist(ref letters);
             UpdateLetterButtons();
+        }
+
+        private void txtCurrentWord_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Only allow letters through
+            }
         }
     }
 }

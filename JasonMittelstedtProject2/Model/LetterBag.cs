@@ -29,11 +29,16 @@ namespace JasonMittelstedtProject2.Model
 
         public char[] DrawSeven()
         {
-            var result = new List<char>(7);
-            for (int i = 0; i < 7; i++)
-            {
-                int idx = random.Next(bag.Count);
-                result.Add(bag[idx]);
+            var result = new List<char>();
+            bool done = false;
+            while (!done) {
+                result = new List<char>();
+                for (int i = 0; i < 7; i++)
+                {
+                    int idx = random.Next(bag.Count);
+                    result.Add(bag[idx]);
+                }
+                done = result.Contains('a') || result.Contains('e') || result.Contains('i') || result.Contains('o') || result.Contains('u') || result.Contains('y');
             }
             return result.ToArray();
         }

@@ -45,22 +45,11 @@
             lblRoundScore = new Label();
             lblSessionScore = new Label();
             menuStrip1 = new MenuStrip();
-            toolStripMenuItem1 = new ToolStripMenuItem();
-            gameToolStripMenuItem = new ToolStripMenuItem();
-            newGameToolStripMenuItem = new ToolStripMenuItem();
-            exitToolStripMenuItem = new ToolStripMenuItem();
-            timerToolStripMenuItem = new ToolStripMenuItem();
-            sToolStripMenuItem = new ToolStripMenuItem();
-            sToolStripMenuItem1 = new ToolStripMenuItem();
-            sToolStripMenuItem2 = new ToolStripMenuItem();
-            highScoresToolStripMenuItem = new ToolStripMenuItem();
-            viewToolStripMenuItem = new ToolStripMenuItem();
-            resetToolStripMenuItem = new ToolStripMenuItem();
-            exportToolStripMenuItem = new ToolStripMenuItem();
             btnClear = new Button();
             btnTwist = new Button();
             label1 = new Label();
-            menuStrip1.SuspendLayout();
+            roundScoreLabel = new Label();
+            sessionScoreLabel = new Label();
             SuspendLayout();
             // 
             // btnLetter0
@@ -143,6 +132,7 @@
             txtCurrentWord.Name = "txtCurrentWord";
             txtCurrentWord.Size = new Size(125, 36);
             txtCurrentWord.TabIndex = 8;
+            txtCurrentWord.KeyPress += txtCurrentWord_KeyPress;
             // 
             // lstValidWords
             // 
@@ -200,88 +190,11 @@
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1 });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(1031, 28);
             menuStrip1.TabIndex = 14;
             menuStrip1.Text = "menuStrip1";
-            // 
-            // toolStripMenuItem1
-            // 
-            toolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { gameToolStripMenuItem, timerToolStripMenuItem, highScoresToolStripMenuItem, exportToolStripMenuItem });
-            toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(156, 24);
-            toolStripMenuItem1.Text = "toolStripMenuItem1";
-            // 
-            // gameToolStripMenuItem
-            // 
-            gameToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { newGameToolStripMenuItem, exitToolStripMenuItem });
-            gameToolStripMenuItem.Name = "gameToolStripMenuItem";
-            gameToolStripMenuItem.Size = new Size(171, 26);
-            gameToolStripMenuItem.Text = "Game";
-            // 
-            // newGameToolStripMenuItem
-            // 
-            newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
-            newGameToolStripMenuItem.Size = new Size(165, 26);
-            newGameToolStripMenuItem.Text = "New Game";
-            // 
-            // exitToolStripMenuItem
-            // 
-            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(165, 26);
-            exitToolStripMenuItem.Text = "Exit";
-            // 
-            // timerToolStripMenuItem
-            // 
-            timerToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { sToolStripMenuItem, sToolStripMenuItem1, sToolStripMenuItem2 });
-            timerToolStripMenuItem.Name = "timerToolStripMenuItem";
-            timerToolStripMenuItem.Size = new Size(171, 26);
-            timerToolStripMenuItem.Text = "Timer";
-            // 
-            // sToolStripMenuItem
-            // 
-            sToolStripMenuItem.Name = "sToolStripMenuItem";
-            sToolStripMenuItem.Size = new Size(122, 26);
-            sToolStripMenuItem.Text = "60s";
-            // 
-            // sToolStripMenuItem1
-            // 
-            sToolStripMenuItem1.Name = "sToolStripMenuItem1";
-            sToolStripMenuItem1.Size = new Size(122, 26);
-            sToolStripMenuItem1.Text = "120s";
-            // 
-            // sToolStripMenuItem2
-            // 
-            sToolStripMenuItem2.Name = "sToolStripMenuItem2";
-            sToolStripMenuItem2.Size = new Size(122, 26);
-            sToolStripMenuItem2.Text = "180s";
-            // 
-            // highScoresToolStripMenuItem
-            // 
-            highScoresToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { viewToolStripMenuItem, resetToolStripMenuItem });
-            highScoresToolStripMenuItem.Name = "highScoresToolStripMenuItem";
-            highScoresToolStripMenuItem.Size = new Size(171, 26);
-            highScoresToolStripMenuItem.Text = "High Scores";
-            // 
-            // viewToolStripMenuItem
-            // 
-            viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            viewToolStripMenuItem.Size = new Size(128, 26);
-            viewToolStripMenuItem.Text = "View";
-            // 
-            // resetToolStripMenuItem
-            // 
-            resetToolStripMenuItem.Name = "resetToolStripMenuItem";
-            resetToolStripMenuItem.Size = new Size(128, 26);
-            resetToolStripMenuItem.Text = "Reset";
-            // 
-            // exportToolStripMenuItem
-            // 
-            exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            exportToolStripMenuItem.Size = new Size(171, 26);
-            exportToolStripMenuItem.Text = "Export";
             // 
             // btnClear
             // 
@@ -312,11 +225,27 @@
             label1.TabIndex = 17;
             label1.Text = "Enter word here";
             // 
+            // roundScoreLabel
+            // 
+            roundScoreLabel.Location = new Point(201, 88);
+            roundScoreLabel.Name = "roundScoreLabel";
+            roundScoreLabel.Size = new Size(89, 25);
+            roundScoreLabel.TabIndex = 18;
+            // 
+            // sessionScoreLabel
+            // 
+            sessionScoreLabel.Location = new Point(312, 88);
+            sessionScoreLabel.Name = "sessionScoreLabel";
+            sessionScoreLabel.Size = new Size(89, 25);
+            sessionScoreLabel.TabIndex = 19;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1031, 530);
+            Controls.Add(sessionScoreLabel);
+            Controls.Add(roundScoreLabel);
             Controls.Add(label1);
             Controls.Add(btnTwist);
             Controls.Add(btnClear);
@@ -338,8 +267,6 @@
             MainMenuStrip = menuStrip1;
             Name = "MainForm";
             Text = "Text Twist by Mittelstedt";
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -361,22 +288,12 @@
         private Label lblRoundScore;
         private Label lblSessionScore;
         private MenuStrip menuStrip1;
-        private ToolStripMenuItem toolStripMenuItem1;
-        private ToolStripMenuItem gameToolStripMenuItem;
-        private ToolStripMenuItem newGameToolStripMenuItem;
-        private ToolStripMenuItem exitToolStripMenuItem;
-        private ToolStripMenuItem timerToolStripMenuItem;
-        private ToolStripMenuItem sToolStripMenuItem;
-        private ToolStripMenuItem sToolStripMenuItem1;
-        private ToolStripMenuItem sToolStripMenuItem2;
-        private ToolStripMenuItem highScoresToolStripMenuItem;
-        private ToolStripMenuItem exportToolStripMenuItem;
-        private ToolStripMenuItem viewToolStripMenuItem;
-        private ToolStripMenuItem resetToolStripMenuItem;
         private Button btnClear;
         private Button btnTwist;
         private Label label1;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;
+        private Label roundScoreLabel;
+        private Label sessionScoreLabel;
     }
 }
